@@ -104,9 +104,11 @@ class OpenAiManager:
             print("[green]✅ Edit line command detected![/]")
             self.vscode_api.edit_line()
             return True
-        elif first_line == "DELETE ROW:":
+        if first_line == "DELETE ROW:":
             print("[green]✅ Delete line command detected![/]")
+            # If there's any specific line number or content in code_content, we could process it here
             self.vscode_api.delete_line()
+            print("[blue]🗑️ Sending delete command to VS Code[/]")
             return True
         
         print(f"[yellow]ℹ No command detected. First line: '{first_line}'[/]")

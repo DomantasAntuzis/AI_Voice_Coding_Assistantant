@@ -57,8 +57,8 @@ class VSCodeAPIHandler:
         self.send_command("editLine")
 
     def delete_line(self):
-        """Siunčia komandą ištrinti pasirinktą eilutę VS Code."""
-        self.send_command("deleteLine")
+        """Sends command to delete the selected line in VS Code."""
+        self.send_command("deleteLine")  # Make sure we use exactly "deleteLine" to match the extension
 
     def close(self):
         """Uždaro WebSocket ryšį."""
